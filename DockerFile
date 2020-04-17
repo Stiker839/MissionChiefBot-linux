@@ -1,0 +1,8 @@
+FROM ubuntu:18.04
+LABEL maintainer="jack@jackbayliss.com"
+WORKDIR /code
+RUN apt-get update && apt-get install -y && apt-get install chromium-browser -y \
+    python3.6 \
+    python3-pip \
+    vim \
+    git && git clone https://github.com/jackbayliss/MissionChiefBot-linux.git missionchief && cd missionchief/botfiles && pip3 install -r requirements.txt 
